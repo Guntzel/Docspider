@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Docspider.Models.Documento>
+
+@{
+    ViewData["Title"] = "Meus Documentos";
+}
+
+<h1>Meus Documentos</h1>
+<a asp-action="Adicionar" class="btn btn-primary mb-3">Adicionar Documento</a> <!-- Botão de Adicionar -->
+<table>
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Nome do Arquivo</th>
+            <th>Arquivo</th>
+            <th>Data de Criação</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var documento in Model)
+        {
+            <tr>
+                <td>@documento.Titulo</td>
+                <td>@documento.Descricao</td>
+                <td>@documento.NomeArquivo</td>
+                <td>
+                    <a href="@documento.CaminhoArquivo" target="_blank">Baixar Arquivo</a>
+                </td>
+                <td>@documento.DataCriacao.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>
+                    <a asp-action="ExibirFormularioEdicao" asp-route-id="@documento.Id" class="btn btn-warning">Editar</a>
+                    <form asp-action="Excluir" asp-controller="Documento" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@documento.Id" />
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

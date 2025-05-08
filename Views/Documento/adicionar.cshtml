@@ -1,0 +1,32 @@
+@model Docspider.Models.Documento
+
+@{
+    ViewData["Title"] = "Adicionar Documento";
+}
+
+<h1>Adicionar Documento</h1>
+
+<form asp-action="Adicionar" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="Titulo">Título</label>
+        <input asp-for="Titulo" maxlength="100" />
+        <span asp-validation-for="Titulo" class="text-danger"></span> <!-- Exibe erros do campo Titulo -->
+    </div>
+    <div>
+        <label for="Descricao">Descrição</label>
+        <textarea asp-for="Descricao" maxlength="2000"></textarea>
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+    <div>
+        <label for="Arquivo">Upload do Arquivo</label>
+        <input type="file" name="Arquivo" /> <!-- O campo de upload não usa asp-for -->
+        <span class="text-danger">
+            @ViewData.ModelState["Arquivo"]?.Errors.FirstOrDefault()?.ErrorMessage
+        </span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,159 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+/*MEU CSS*/
+body, html{
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+
+table, tr, th, td {
+  border: 2px solid black;
+}
+
+
+.cabecalho
+{
+  padding:1vh;
+  display: flex;
+  align-items: center;
+  font-size: 2vh;
+  background-color: blue;
+  width: 100%;
+}
+
+.menu-button
+{
+  color: white;
+  font-size: 2vh;
+  margin-right: 1vh;
+}
+
+#aside
+{ 
+  float: left;
+  width: 15%;
+  height: 95%;
+  transition: all 0.35s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid black;
+}
+
+.sidebar-link {
+  font-size: 2vh;
+  display: flex; /* Ativa o Flexbox */
+  justify-content: space-between; /* Espaça o texto e o ícone */
+  align-items: center; /* Alinha verticalmente */
+  padding: 0.5rem; /* Adiciona espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  color:black;
+}
+
+.sidebar-link i {
+  font-size: 2vh;
+}
+
+.collapsed{
+  margin-left: -13% !important;
+}
+
+.sidebar-item
+{
+  border-bottom: solid 2px rgb(0, 0, 0);
+}
+
+
+
+@media (max-width: 768px) {
+  #aside{
+    width: 80% !important;
+    position: fixed;
+    
+  }
+
+  .collapsed{
+    margin-left: -100% !important;
+  }
+
+}
+
+
+.sidebar-link.active {
+  color: blue !important;
+  border-radius: 5px;
+}
